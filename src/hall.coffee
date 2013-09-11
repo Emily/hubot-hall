@@ -31,6 +31,7 @@ class Hall extends Adapter
     @io = @bot.io
 
     onRoomItemNew = (data) =>
+      debug "hubot-hall just received a message..."
       data = JSON.parse(data)
       unless !data
         author =
