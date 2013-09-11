@@ -11,6 +11,7 @@ class Hall extends Adapter
 
   send: (params, strings...) ->
     user = @userFromParams(params)
+    debug "hubot-hall is sending a message..."
     @bot.sendMessage user.room_id, user.room_type, str for str in strings
 
   reply: (params, strings...) ->
