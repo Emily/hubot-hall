@@ -53,6 +53,7 @@ class Hall extends Adapter
     @io.on 'ROOM_ITEM_NEW', onRoomItemNew
 
   run: ->
+    self = @
 
     cfg =
       email:    process.env.HUBOT_HALL_EMAIL
@@ -68,7 +69,7 @@ class Hall extends Adapter
 
     @connect()
 
-    @emit 'connected'
+    self.emit 'connected'
 
 exports.use = (robot) ->
   new Hall robot
