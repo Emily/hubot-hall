@@ -48,7 +48,7 @@ class Hall extends Adapter
         else if message.match(regex_user_name)
           message = message.replace(regex_user_name, "#{@robot.name}:")
         debug "message: #{message}"
-        @receive new TextMessage(author, message)
+        @receive new TextMessage(author, message, "randommessageidthinghere")
 
     @io.on 'ROOM_ITEM_NEW', onRoomItemNew
 
